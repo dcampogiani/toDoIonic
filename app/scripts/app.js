@@ -78,7 +78,7 @@ angular.module('ToDoIonic', ['ionic'])
         };
 
         // Create our modal
-        $ionicModal.fromTemplateUrl('/templates/new-task.html', function(modal) {
+        $ionicModal.fromTemplateUrl('templates/new-task.html', function(modal) {
             $scope.taskModal = modal;
         }, {
             scope: $scope
