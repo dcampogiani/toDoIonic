@@ -44,7 +44,7 @@ angular.module('ToDoIonic', ['ionic'])
 })
 
 
-.controller('TodoCtrl', function($scope, $timeout, $ionicModal, Projects) {
+.controller('TodoCtrl', function($scope, $timeout, $ionicModal, $ionicSideMenuDelegate, Projects) {
 
         // A utility function for creating a new project
         // with the given projectTitle
@@ -74,7 +74,7 @@ angular.module('ToDoIonic', ['ionic'])
         $scope.selectProject = function(project, index) {
             $scope.activeProject = project;
             Projects.setLastActiveIndex(index);
-            $scope.sideMenuController.close();
+            $ionicSideMenuDelegate.toggleLeft();
         };
 
         // Create our modal
@@ -108,7 +108,7 @@ angular.module('ToDoIonic', ['ionic'])
         }
 
         $scope.toggleProjects = function() {
-            $scope.sideMenuController.toggleLeft();
+            $ionicSideMenuDelegate.toggleLeft();
         };
 
 
